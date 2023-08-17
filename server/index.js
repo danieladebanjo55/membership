@@ -27,8 +27,8 @@ app.post('/api/webchatpay', (req, res) => {
     success_url = 'http://localhost:3000';
     cancel_url = 'http://localhost:3000';
   } else {
-    success_url = 'https://elite-house.onrender.com/';
-    cancel_url = 'https://elite-house.onrender.com/';
+    success_url = 'https://elite-house.vercel.app';
+    cancel_url = 'https://elite-house.vercel.app';
   }
   stripe.checkout.sessions
     .create({
