@@ -2,6 +2,7 @@ import express from 'express';
 const app = express();
 import * as dotenv from 'dotenv';
 import cors from 'cors';
+import os from 'os';
 
 import Stripe from 'stripe';
 
@@ -19,18 +20,16 @@ app.use(
 
 app.use(express.json());
 
-let success_url = '';
-let cancel_url = '';
-
-if (window.location.hostname === 'localhost') {
-  success_url = 'http://localhost:3000';
-  cancel_url = 'http://localhost:3000';
-} else {
-  success_url = 'http://localhost:3000';
-  cancel_url = 'http://localhost:3000';
-}
-
 app.post('/api/webchatpay', (req, res) => {
+  let success_url = '';
+  let cancel_url = '';
+  if (os.hostname() === 'localhost') {
+    success_url = 'http://localhost:3000';
+    cancel_url = 'http://localhost:3000';
+  } else {
+    success_url = 'http://localhost:3000';
+    cancel_url = 'http://localhost:3000';
+  }
   stripe.checkout.sessions
     .create({
       payment_method_types: ['card'],

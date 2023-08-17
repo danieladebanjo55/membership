@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 
 import Card from '@mui/material/Card';
 import Stack from '@mui/material/Stack';
-import Button from '@mui/material/Button';
+import { LoadingButton } from '@mui/lab';
 import Typography from '@mui/material/Typography';
 
 import axios from 'src/api/axios';
-import Label from 'src/components/label';
 import Image from 'src/components/image';
+import Label from 'src/components/label';
 import Iconify from 'src/components/iconify';
 import ButtonWithModal from 'src/sections/_marketing/utils/modal';
 
@@ -23,12 +23,15 @@ export default function PricingMarketingCard({ plan }) {
 
   const [open, setOpen] = useState(false);
 
+  const [btnLoad, setBtnLoad] = useState(false);
   const handlePayment = () => {
+    setBtnLoad(true);
     axios
       .post('/api/webchatpay', {}, { headers: { 'Content-Type': 'application/json' } })
       .then((response) => {
         window.location.href = response.data.url;
         console.log(response.data.url);
+        setBtnLoad(false);
       });
   };
 
@@ -79,7 +82,8 @@ export default function PricingMarketingCard({ plan }) {
         ))}
       </Stack>
 
-      <Button
+      <LoadingButton
+        loading={btnLoad}
         onClick={handlePayment}
         fullWidth
         size="large"
@@ -87,7 +91,7 @@ export default function PricingMarketingCard({ plan }) {
         variant={(basicLicense && 'outlined') || 'contained'}
       >
         Choose Package
-      </Button>
+      </LoadingButton>
     </Card>
   );
 }
