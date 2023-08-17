@@ -63,9 +63,9 @@ export default function Header({ headerOnDark }) {
         >
           <Box sx={{ lineHeight: 0, position: 'relative' }}>
             <Stack direction="row">
-              {/* <img src="/assets/logo/logo.png" alt="logo" width="100px" /> */}
+              <img src="/assets/logo/logo.jpeg" alt="logo" width="100px" />
               <Typography
-                variant="h3"
+                variant="h4"
                 sx={{ display: { lg: 'block', md: 'block', sm: 'none', xs: 'none' }, my: 'auto' }}
                 color="initial"
               >
@@ -91,7 +91,7 @@ export default function Header({ headerOnDark }) {
             </Link> */}
           </Box>
 
-          {mdUp && <NavDesktop data={navConfig} />}
+          {/* {mdUp && <NavDesktop data={navConfig} />} */}
 
           <Stack spacing={2} direction="row" alignItems="center" justifyContent="flex-end">
             <Stack spacing={1} direction="row" alignItems="center">
@@ -107,7 +107,7 @@ export default function Header({ headerOnDark }) {
             </Stack>
           </Stack>
 
-          {!mdUp && <NavMobile data={navConfig} />}
+          {/* {!mdUp && <NavMobile data={navConfig} />} */}
         </Container>
       </Toolbar>
 
