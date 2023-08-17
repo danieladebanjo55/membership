@@ -26,11 +26,11 @@ import MarketingLandingCaseStudies from '../landing/marketing-landing-case-studi
 export default function MarketingLandingView() {
   return (
     <>
-      <MarketingLandingHero />
+      {/* <MarketingLandingHero />
 
       <MarketingOurClients brands={_brands} />
 
-      <MarketingLandingAbout />
+      <MarketingLandingAbout /> */}
 
       <MarketingLandingServices />
 
@@ -38,15 +38,15 @@ export default function MarketingLandingView() {
 
       {/* <MarketingLandingCaseStudies caseStudies={_caseStudies.slice(-6)} /> */}
 
-      <MarketingTeam members={_members} />
+      {/* <MarketingTeam members={_members} /> */}
 
       <PricingMarketing plans={_pricingMarketing} />
 
-      <MarketingLandingFaqs />
+      {/*  <MarketingLandingFaqs />
 
       <MarketingTestimonial testimonials={_testimonials} />
 
-      <BlogMarketingLatestPosts posts={_marketingPosts.slice(0, 4)} />
+      <BlogMarketingLatestPosts posts={_marketingPosts.slice(0, 4)} /> */}
 
       {/* <MarketingLandingFreeSEO />
 
