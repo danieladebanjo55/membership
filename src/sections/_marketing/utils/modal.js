@@ -1,6 +1,8 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import axios from 'axios';
 import React from 'react';
+// eslint-disable-next-line import/no-extraneous-dependencies
+import { Checkout } from 'checkout-sdk-node';
 
 import { Box, Stack, Modal, Button } from '@mui/material';
 
@@ -14,6 +16,54 @@ const ButtonWithModal = ({ open, setOpen }) => {
 
   const handleClose = () => {
     setOpen(false);
+  };
+
+  const handleWeChatPay = async () => {
+    /*  const cko = new Checkout('18460DAE21F7C34F4A0828457C7FFDB0', {
+      client: 'ack_i2yvtzufrfuehlvwc2a4cwvm2e',
+      scope: ['gateway'], // array of scopes
+      environment: 'sandbox', // or "production"
+    }); */
+
+    // Or if you use api keys:
+    const cko = new Checkout('18460DAE21F7C34F4A0828457C7FFDB0', {
+      pk: '638D5E23A3320FFC3516307BAF54BDC9',
+    });
+
+    try {
+      const payment = await cko.payments.request({
+        source: {
+          // inferred type: "token"
+          type: 'webchatpay',
+          billing_address: {
+            address_line1: 'Wall Street',
+            address_line2: 'Dollar Avenue',
+            city: 'London',
+            state: 'London',
+            zip: 'W1W W1W',
+            country: 'GB',
+          },
+          phone: {
+            country_code: '44',
+            number: '7123456789',
+          },
+        },
+        currency: 'USD',
+        amount: 1000,
+        payment_type: 'Regular',
+        reference: 'ORDER 1234',
+        description: 'Mint Tea',
+        customer: {
+          email: 'new_user@email.com',
+          name: 'John Smith',
+        },
+        metadata: {
+          value: 'My value',
+        },
+      });
+    } catch (err) {
+      console.log(err.name);
+    }
   };
 
   const sign =
@@ -103,7 +153,7 @@ const ButtonWithModal = ({ open, setOpen }) => {
             <Button variant="contained" onClick={handleAliPay} color="primary">
               Ali Pay
             </Button>
-            <Button variant="contained" onClick={handleClose} color="secondary">
+            <Button variant="contained" onClick={handleWeChatPay} color="secondary">
               Wechat Pay
             </Button>
           </Stack>
