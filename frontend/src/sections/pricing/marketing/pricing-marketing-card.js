@@ -70,18 +70,6 @@ export default function PricingMarketingCard({ plan }) {
         <Image alt="icon" src={plan.icon} sx={{ width: 64, height: 64 }} />
       </Stack>
 
-      <Typography variant="body2" sx={{ color: 'text.secondary', mt: 3 }}>
-        {plan.caption}
-      </Typography>
-
-      <Stack spacing={2} sx={{ my: 5 }}>
-        {plan.options.map((option) => (
-          <Stack key={option} direction="row" alignItems="center" sx={{ typography: 'body2' }}>
-            <Iconify icon="carbon:checkmark" sx={{ mr: 2, color: 'primary.main' }} /> {option}
-          </Stack>
-        ))}
-      </Stack>
-
       <LoadingButton
         loading={btnLoad}
         onClick={handlePayment}
