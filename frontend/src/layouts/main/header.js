@@ -69,7 +69,7 @@ export default function Header({ headerOnDark }) {
                 sx={{ display: { lg: 'block', md: 'block', sm: 'none', xs: 'none' }, my: 'auto' }}
                 color="initial"
               >
-                Elite House
+                尚英社 {/* Elite House */}
               </Typography>
             </Stack>
             {/* <Link href="/" target="_blank" rel="noopener">

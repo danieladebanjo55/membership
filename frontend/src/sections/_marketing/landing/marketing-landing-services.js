@@ -19,39 +19,39 @@ const COLORS = ['primary', 'secondary', 'success', 'warning', 'primary', 'second
 
 const SERVICES = [
   {
-    name: 'Singaporean Bank account',
+    name: '新加坡银行户口及服务',
     icon: '/assets/icons/service/ic_service_seo.svg',
-    content: 'Nunc nonummy metus. Donec elit libero',
+    content: '',
     path: paths.marketing.services,
   },
   {
-    name: 'Social Commerce Service',
+    name: '社交电商服务',
     icon: '/assets/icons/service/ic_service_mail.svg',
-    content: 'Nunc nonummy metus. Donec elit libero',
+    content: '',
     path: paths.marketing.services,
   },
   {
-    name: 'Mastercard Debit Card',
+    name: '实体 Mastercard 扣帐卡',
     icon: '/assets/icons/service/ic_service_analysis.svg',
-    content: 'Nunc nonummy metus. Donec elit libero',
+    content: '',
     path: paths.marketing.services,
   },
   {
-    name: 'Asset re-allocation',
+    name: '国外资产配置',
     icon: '/assets/icons/service/ic_service_bullhorn.svg',
-    content: 'Nunc nonummy metus. Donec elit libero',
+    content: '',
     path: paths.marketing.services,
   },
   {
-    name: 'Travel',
+    name: '旅游',
     icon: '/assets/icons/service/ic_service_analysis.svg',
-    content: 'Nunc nonummy metus. Donec elit libero',
+    content: '',
     path: paths.marketing.services,
   },
   {
-    name: 'Blockchain services',
+    name: '区块链系统',
     icon: '/assets/icons/service/ic_service_analysis.svg',
-    content: 'Nunc nonummy metus. Donec elit libero',
+    content: '',
     path: paths.marketing.services,
   },
 ];
@@ -78,11 +78,7 @@ export default function MarketingLandingServices() {
           Benefits
         </Typography>
 
-        <Typography variant="h2">We Provide</Typography>
-
-        <Typography sx={{ color: 'text.secondary' }}>
-          Nunc nonummy metus. Donec elit libero, sodales nec, volutpat a, suscipit non, turpis.
-        </Typography>
+        <Typography variant="h2">我們提供 {/* We Provide */}</Typography>
       </Stack>
 
       <Box

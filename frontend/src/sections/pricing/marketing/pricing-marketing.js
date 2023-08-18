@@ -37,12 +37,7 @@ export default function PricingMarketing({ plans }) {
             Member
           </Typography>
 
-          <Typography variant="h2">Become a Member</Typography>
-
-          <Typography sx={{ color: 'text.secondary' }}>
-            Choose the perfect plan for your needs.
-            <br /> Always flexible to grow
-          </Typography>
+          <Typography variant="h2">成为会员 {/* Become a Member */}</Typography>
         </Stack>
 
         <Stack direction="row" alignItems="center">
@@ -65,7 +60,7 @@ export default function PricingMarketing({ plans }) {
           },
         }}
       >
-        {plans.map((plan) => (
+        {plans.slice(0, 1).map((plan) => (
           <PlanCard key={plan.license} plan={plan} />
         ))}
       </Box>

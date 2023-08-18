@@ -1,3 +1,4 @@
+import { Box } from '@mui/material';
 import Link from '@mui/material/Link';
 import Stack from '@mui/material/Stack';
 import AppBar from '@mui/material/AppBar';
@@ -5,7 +6,6 @@ import Toolbar from '@mui/material/Toolbar';
 import { useTheme } from '@mui/material/styles';
 
 import { bgBlur } from 'src/theme/css';
-import Logo from 'src/components/logo';
 import { paths } from 'src/routes/paths';
 import { RouterLink } from 'src/routes/components';
 import { useOffSetTop } from 'src/hooks/use-off-set-top';
@@ -45,7 +45,7 @@ export default function HeaderSimple() {
           }),
         }}
       >
-        <Logo />
+        <Box component="img" src="/assets/logo/logo.jpeg" sx={{ width: 128 }} />
 
         <Stack direction="row" alignItems="center" spacing={1}>
           <SettingsButton />

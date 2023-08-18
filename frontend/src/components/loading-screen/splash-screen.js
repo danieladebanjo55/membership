@@ -47,7 +47,7 @@ export default function SplashScreen({ sx }) {
             repeat: Infinity,
           }}
         >
-          <Logo single sx={{ width: 128, height: 128 }} />
+          <Box component="img" src="/assets/logo/logo.jpeg" sx={{ width: 128 }} />
         </m.div>
       </StyledRoot>
 

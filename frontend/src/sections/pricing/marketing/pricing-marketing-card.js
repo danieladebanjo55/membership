@@ -15,7 +15,7 @@ import ButtonWithModal from 'src/sections/_marketing/utils/modal';
 // ----------------------------------------------------------------------
 
 export default function PricingMarketingCard({ plan }) {
-  const basicLicense = plan.license === 'Basic';
+  const basicLicense = plan.license === '加入';
 
   const starterLicense = plan.license === 'Starter';
 
@@ -56,7 +56,7 @@ export default function PricingMarketingCard({ plan }) {
       <Stack direction="row" justifyContent="space-between">
         <div>
           <Typography variant="h4" component="div" sx={{ color: 'primary.main', mb: 2 }}>
-            {plan.license}
+            加入{/* {plan.license} */}
           </Typography>
 
           <Stack direction="row" alignItems="center" spacing={0.5}>
@@ -90,7 +90,7 @@ export default function PricingMarketingCard({ plan }) {
         color={(premiumLicense && 'primary') || 'inherit'}
         variant={(basicLicense && 'outlined') || 'contained'}
       >
-        Choose Package
+        付款
       </LoadingButton>
     </Card>
   );
